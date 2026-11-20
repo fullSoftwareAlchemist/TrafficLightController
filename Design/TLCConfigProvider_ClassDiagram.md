@@ -22,9 +22,10 @@ classDiagram
     }
 
     class ConfigFiles {
-        <<text files>>
+        <<text files in config/>>
         TLCConfig.txt
         TLCLeftConfig.txt
+        TLCLeftConfig_hacked.txt
     }
 
     TLCConfigProvider ..> Phase : creates

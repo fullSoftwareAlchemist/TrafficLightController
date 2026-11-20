@@ -1,5 +1,8 @@
 # car_main, car_cross, ped_main, ped_cross, left_main, left_cross, duration_s
+# all red
+(R,       R,        R,       R,        R,       R,         1.0),
 # main phase
+(RA,      R,        R,       R,        R,       R,         1.0),
 (G,       R,        G,       R,        R,       R,         1.0),
 (G,       R,        R,       R,        R,       R,         1.0),
 (A,       R,        R,       R,        R,       R,         1.0),
@@ -19,6 +22,3 @@
 (R,       R,        R,       R,        R,       RA,        1.0),
 (R,       R,        R,       R,        R,       G,         1.0),
 (R,       R,        R,       R,        R,       A,         1.0),
-(R,       R,        R,       R,        R,       R,         1.0),
-#main phase
-(RA,      R,        R,       R,        R,       R,         1.0),

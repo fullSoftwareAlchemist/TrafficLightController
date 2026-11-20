@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 
-from AmmeterAbstraction import IAmmeterGuiDriver, LampState
+from HAL.AmmeterAbstraction import IAmmeterGuiDriver, LampState
 
 
 class IMonitorConflictingGreen(ABC):

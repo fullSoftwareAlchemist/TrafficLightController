@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     # Type hints only; avoids a circular import at runtime.
-    from TrafficLightAbstraction import ITrafficLightDriver
+    from HAL.TrafficLightAbstraction import ITrafficLightDriver
 
 
 class LightColor(Enum):

@@ -5,7 +5,7 @@ from abc import ABC, abstractmethod
 from enum import Enum
 
 from TrafficLight import LightColor
-from TrafficLightAbstraction import LAMP_COLORS
+from HAL.TrafficLightAbstraction import LAMP_COLORS
 
 
 class LampState(Enum):

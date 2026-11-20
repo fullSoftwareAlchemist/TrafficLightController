@@ -1,14 +1,17 @@
 from __future__ import annotations
 
 from pathlib import Path
+import sys
 import tkinter as tk
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from TLCConfigProvider import TLCConfigProvider
 from TLCFactory import TLCFactory
-from AmmeterAbstraction import AmmeterGuiDriver
+from HAL.AmmeterAbstraction import AmmeterGuiDriver
 from ConflictingGreenMonitor import ConflictingGreenMonitor
 from TrafficLight import LightColor
-from TrafficLightAbstraction import OFF_COLOR, TrafficLightGuiDriver
+from HAL.TrafficLightAbstraction import OFF_COLOR, TrafficLightGuiDriver
 
 # Short aliases so the sequence table below is easy to read.
 R = LightColor.RED
