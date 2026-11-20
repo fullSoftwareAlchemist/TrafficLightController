@@ -1,0 +1,12 @@
+# car_main, car_cross, ped_main, ped_cross, duration_s
+(G,       R,        G,       R,         1.0),
+(G,       R,        R,       R,         1.0),
+(A,       R,        R,       R,         1.0),
+(R,       R,        R,       R,         1.0),
+(R,       RA,       R,       R,         1.0),
+(R,       G,        R,       G,         1.0),
+(R,       G,        R,       R,         1.0),
+(R,       A,        R,       R,         1.0),
+(R,       R,        R,       R,         1.0),
+(RA,      R,        R,       R,         1.0),
+

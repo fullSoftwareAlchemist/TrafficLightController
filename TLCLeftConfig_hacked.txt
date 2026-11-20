@@ -1,0 +1,24 @@
+# car_main, car_cross, ped_main, ped_cross, left_main, left_cross, duration_s
+# main phase
+(G,       R,        G,       R,        R,       R,         1.0),
+(G,       R,        R,       R,        R,       R,         1.0),
+(A,       R,        R,       R,        R,       R,         1.0),
+(R,       R,        R,       R,        R,       R,         1.0),
+# main left phase
+(R,       R,        R,       R,        RA,      R,         1.0),
+(R,       R,        R,       G,        G,       R,         1.0),
+(R,       R,        R,       R,        A,       R,         1.0),
+(R,       R,        R,       R,        R,       R,         1.0),
+# cross phase
+(R,       RA,       R,       R,        R,       R,         1.0),
+(R,       G,        R,       G,        R,       R,         1.0),
+(R,       G,        R,       R,        R,       R,         1.0),
+(R,       A,        R,       R,        R,       R,         1.0),
+(R,       R,        R,       R,        R,       R,         1.0),
+# cross left phase
+(R,       R,        R,       R,        R,       RA,        1.0),
+(R,       R,        R,       R,        R,       G,         1.0),
+(R,       R,        R,       R,        R,       A,         1.0),
+(R,       R,        R,       R,        R,       R,         1.0),
+#main phase
+(RA,      R,        R,       R,        R,       R,         1.0),
