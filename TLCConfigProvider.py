@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-from pathlib import Path
-
+from HAL.FileAccess import IAccessFiles
 from TLC import LeftPhase, Phase
 from TrafficLight import LightColor
 
@@ -14,12 +13,12 @@ COLOR_CODES: dict[str, LightColor] = {
 
 
 class TLCConfigProvider:
-    def __init__(self, path: Path | str) -> None:
-        self._path = Path(path)
+    def __init__(self, file_access: IAccessFiles) -> None:
+        self._file_access = file_access
 
     def load_sequence(self) -> tuple[Phase | None, ...]:
         phases: list[Phase | None] = []
-        for line in self._path.read_text(encoding="utf-8").splitlines():
+        for line in self._file_access.read_text().splitlines():
             text = line.strip().rstrip(",")
             if not text or text.startswith("#"):
                 continue
@@ -40,7 +39,7 @@ class TLCConfigProvider:
 
     def load_sequenceLeftTurn(self) -> tuple[LeftPhase | None, ...]:
         phases: list[LeftPhase | None] = []
-        for line in self._path.read_text(encoding="utf-8").splitlines():
+        for line in self._file_access.read_text().splitlines():
             text = line.strip().rstrip(",")
             if not text or text.startswith("#"):
                 continue

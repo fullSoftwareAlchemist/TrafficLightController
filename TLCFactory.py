@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from HAL.FileAccess import FileAccess
 from TLC import TlcNormalOperationState, TlcSafeState, TrafficLightController
 from TLCConfigProvider import TLCConfigProvider
 from TrafficLight import (
@@ -32,7 +33,7 @@ class TLCFactory:
 
     @staticmethod
     def createConsoleTLC() -> TrafficLightController:
-        sequence = TLCConfigProvider(CONFIG_DIR / "TLCConfig.txt").load_sequence()
+        sequence = TLCConfigProvider(FileAccess(CONFIG_DIR / "TLCConfig.txt")).load_sequence()
         traffic_lights = {
             name: TrafficLight(TLCFactory.createTrafficLightStates(TrafficLightConsoleDriver()))
             for name in ("car_main", "ped_main", "car_cross", "ped_cross")
@@ -41,7 +42,7 @@ class TLCFactory:
 
     @staticmethod
     def createGuiTLC(trafficLightDrivers: dict[str, ITrafficLightDriver]) -> TrafficLightController:
-        sequence = TLCConfigProvider(CONFIG_DIR / "TLCConfig.txt").load_sequence()
+        sequence = TLCConfigProvider(FileAccess(CONFIG_DIR / "TLCConfig.txt")).load_sequence()
         traffic_lights = {
             name: TrafficLight(TLCFactory.createTrafficLightStates(driver)) for name, driver in trafficLightDrivers.items()
         }
@@ -49,7 +50,7 @@ class TLCFactory:
 
     @staticmethod
     def createGuiLeftTurnTLC(trafficLightDrivers: dict[str, ITrafficLightDriver]) -> TrafficLightController:
-        sequence = TLCConfigProvider(CONFIG_DIR / "TLCLeftConfig.txt").load_sequenceLeftTurn()
+        sequence = TLCConfigProvider(FileAccess(CONFIG_DIR / "TLCLeftConfig.txt")).load_sequenceLeftTurn()
         traffic_lights = {
             name: TrafficLight(TLCFactory.createTrafficLightStates(driver)) for name, driver in trafficLightDrivers.items()
         }
@@ -57,7 +58,7 @@ class TLCFactory:
 
     @staticmethod
     def createHackedGuiLeftTurnTLC(trafficLightDrivers: dict[str, ITrafficLightDriver]) -> TrafficLightController:
-        sequence = TLCConfigProvider(CONFIG_DIR / "TLCLeftConfig_hacked.txt").load_sequenceLeftTurn()
+        sequence = TLCConfigProvider(FileAccess(CONFIG_DIR / "TLCLeftConfig_hacked.txt")).load_sequenceLeftTurn()
         traffic_lights = {
             name: TrafficLight(TLCFactory.createTrafficLightStates(driver)) for name, driver in trafficLightDrivers.items()
         }
